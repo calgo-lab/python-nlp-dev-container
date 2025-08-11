@@ -2,6 +2,7 @@ accelerate
 autogluon
 beautifulsoup4
 bpemb
+dask[complete]
 datasets
 evaluate
 fastapi
@@ -19,6 +20,7 @@ notebook
 numpy
 optuna
 pandas
+plotly
 pydantic
 python-dateutil
 pytorch-lightning
