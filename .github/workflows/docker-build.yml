@@ -2,7 +2,7 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ main ]
+    branches: [ ubuntu22.04-python3.12.11-cuda12.4.1-torch2.5.1 ]
 
 jobs:
   docker:
@@ -26,11 +26,3 @@ jobs:
 
       - name: Push Docker image
         run: docker push "${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}:$IMAGE_TAG"
-
-      - name: Update Docker Hub description
-        uses: peter-evans/dockerhub-description@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PAT }}
-          repository: ${{ vars.DOCKERHUB_USERNAME }}/${{ vars.DOCKERHUB_REPOSITORY }}
-          readme-filepath: ./README.md
