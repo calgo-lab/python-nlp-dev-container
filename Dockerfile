@@ -55,6 +55,7 @@ RUN apt-get update && apt-get install --assume-yes \
     openssh-server \
     screen \
     tmux \
+    tzdata \
     unzip \
     vim \
     wget \
@@ -70,7 +71,11 @@ RUN PYTHON_SHORT_VERSION=$(echo "${PYTHON_VERSION}" | cut --delimiter=. --fields
     ln --symbolic --force /usr/local/bin/python${PYTHON_SHORT_VERSION} /usr/bin/python && \
     ln --symbolic --force /usr/local/bin/pip${PYTHON_SHORT_VERSION} /usr/bin/pip && \
     ln --symbolic --force /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && \
+    echo ${TIMEZONE} > /etc/timezone && \
+    dpkg-reconfigure --frontend noninteractive tzdata && \
     wget --output-document=/root/.screenrc https://raw.githubusercontent.com/thomhastings/screenrc/master/screenrc
+
+ENV TZ=${TIMEZONE}
 
 ARG CUDA_VERSION
 ARG PYTHON_VERSION
