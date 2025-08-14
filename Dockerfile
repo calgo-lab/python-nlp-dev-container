@@ -46,6 +46,7 @@ RUN apt-get update && apt-get install --assume-yes \
     curl \
     gawk \
     git \
+    gosu \
     htop \
     iputils-ping \
     less \
@@ -54,6 +55,7 @@ RUN apt-get update && apt-get install --assume-yes \
     net-tools \
     openssh-server \
     screen \
+    sudo \
     tmux \
     tzdata \
     unzip \

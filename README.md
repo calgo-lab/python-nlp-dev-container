@@ -21,6 +21,7 @@ version comes with -
   - curl
   - gawk
   - git
+  - gosu
   - htop
   - iputils-ping
   - less
@@ -29,6 +30,7 @@ version comes with -
   - net-tools
   - openssh-server
   - screen
+  - sudo
   - tmux
   - unzip
   - vim
