@@ -18,6 +18,7 @@ version comes with -
   (https://hub.docker.com/r/nvidia/cuda/tags)
 
 - Installed Terminal Tools:
+  - acl
   - curl
   - gawk
   - git
